@@ -17,11 +17,11 @@
             line-height: 1.6;
         }
         
-        /* 头部 - 可点击 */
+        /* 头部 - 窄条样式，只保留标准色指南 */
         .header {
             background: linear-gradient(135deg, #DA1F28 0%, #800000 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 14px 20px;
             text-align: center;
             cursor: pointer;
             text-decoration: none;
@@ -34,14 +34,10 @@
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 1.6em;
+            margin-bottom: 0;
             font-weight: bold;
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
+            letter-spacing: 2px;
         }
         
         /* Logo容器 - 与index保持完全一致 */
@@ -293,7 +289,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
-        /* 复制提示 */
+        /* 复制提示 - 修复闪烁问题 */
         .copy-toast {
             position: fixed;
             top: 50%;
@@ -306,15 +302,16 @@
             font-size: 1em;
             display: none;
             z-index: 1000;
-            animation: fadeInOut 1.5s ease;
             text-align: center;
             line-height: 1.5;
+            pointer-events: none;
+            animation: fadeInOut 1.5s ease forwards;
         }
         
         @keyframes fadeInOut {
             0% { opacity: 0; transform: translate(-50%, -40%); }
-            20% { opacity: 1; transform: translate(-50%, -50%); }
-            80% { opacity: 1; transform: translate(-50%, -50%); }
+            15% { opacity: 1; transform: translate(-50%, -50%); }
+            85% { opacity: 1; transform: translate(-50%, -50%); }
             100% { opacity: 0; transform: translate(-50%, -60%); }
         }
         
@@ -378,8 +375,8 @@
         
         /* 平板端 */
         @media (max-width: 768px) {
-            .header h1 { font-size: 1.8em; }
-            .header p { font-size: 1em; }
+            .header { padding: 10px 20px; }
+            .header h1 { font-size: 1.3em; }
             .logo-section { padding: 30px 20px 25px; margin-top: 0; }
             .logo-section svg { max-width: 400px; }
             .font-container { flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -389,19 +386,10 @@
             .back-to-top { top: 15px; left: 15px; width: 40px; height: 40px; font-size: 1.2em; }
         }
         
-        /* 手机端 - 头部压缩，与index保持一致 */
+        /* 手机端 */
         @media (max-width: 600px) {
-            .header {
-                padding: 18px 20px 16px;
-            }
-            .header h1 {
-                font-size: 1.5em;
-                margin-bottom: 4px;
-            }
-            .header p {
-                font-size: 0.9em;
-                opacity: 0.9;
-            }
+            .header { padding: 8px 16px; }
+            .header h1 { font-size: 1.1em; letter-spacing: 1px; }
             
             .container { padding: 0 10px; margin: 10px auto; }
             .logo-section { padding: 25px 20px 20px; margin-top: 15px; }
@@ -424,16 +412,8 @@
         
         /* 超小屏幕 */
         @media (max-width: 400px) {
-            .header {
-                padding: 14px 16px 12px;
-            }
-            .header h1 {
-                font-size: 1.3em;
-                margin-bottom: 2px;
-            }
-            .header p {
-                font-size: 0.8em;
-            }
+            .header { padding: 6px 12px; }
+            .header h1 { font-size: 0.95em; letter-spacing: 0.5px; }
             
             .color-grid { gap: 8px; margin-top: 8px; }
             .color-display { height: 80px; padding: 5px; }
@@ -450,10 +430,9 @@
     <!-- 浮动返回按钮 -->
     <a href="https://jingwenwang-jingle.github.io/" class="back-to-top" id="backToTop" title="返回首页">←</a>
     
-    <!-- 头部 - 可点击跳转主页 -->
+    <!-- 头部 - 窄条样式，只显示标准色指南 -->
     <a href="https://jingwenwang-jingle.github.io/" class="header">
-        <h1>杭高电视台</h1>
-        <p>标准色指南</p>
+        <h1>标准色指南</h1>
     </a>
     
     <!-- Logo区域 - 内嵌SVG，与index保持完全一致 -->
@@ -599,7 +578,7 @@
     </div>
     
     <!-- 复制提示 -->
-    <div class="copy-toast" id="copyToast">已复制到剪贴板！</div>
+    <div class="copy-toast" id="copyToast"></div>
     
     <!-- 页脚 -->
     <div class="footer">
@@ -632,6 +611,10 @@
             { name: '酒红', hex: '#400000', rgb: '64, 0, 0', cmyk: '30, 100, 100, 60' },
             { name: '圣洁', hex: '#EEECD9', rgb: '238, 236, 217', cmyk: '5, 5, 15, 0' }
         ];
+        
+        // Toast 相关
+        let toastTimer = null;
+        const toastEl = document.getElementById('copyToast');
         
         function createColorCard(color) {
             const card = document.createElement('div');
@@ -669,10 +652,26 @@
         }
         
         function showToast(message) {
-            const toast = document.getElementById('copyToast');
-            toast.innerHTML = message;
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2000);
+            // 清除之前的定时器
+            if (toastTimer) {
+                clearTimeout(toastTimer);
+                toastTimer = null;
+            }
+            // 重置动画：移除并重新添加元素以重启动画
+            toastEl.style.display = 'none';
+            toastEl.style.animation = 'none';
+            // 强制回流
+            void toastEl.offsetHeight;
+            
+            toastEl.innerHTML = message;
+            toastEl.style.display = 'block';
+            toastEl.style.animation = 'fadeInOut 1.5s ease forwards';
+            
+            toastTimer = setTimeout(() => {
+                toastEl.style.display = 'none';
+                toastEl.style.animation = 'none';
+                toastTimer = null;
+            }, 1600);
         }
         
         function downloadFont(type) {
