@@ -10,14 +10,17 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            font-size: 16px;
+        }
+
         body {
             font-family: "Microsoft YaHei", "PingFang SC", "Source Han Sans SC", Arial, sans-serif;
             background-color: #f5f5f5;
             line-height: 1.6;
         }
-        
-        /* 头部 - 窄条样式，只保留标准色指南 */
+
         .header {
             background: linear-gradient(135deg, #DA1F28 0%, #800000 100%);
             color: white;
@@ -28,25 +31,24 @@
             display: block;
             transition: opacity 0.3s ease;
         }
-        
+
         .header:hover {
             opacity: 0.9;
         }
-        
+
         .header h1 {
-            font-size: 1.6em;
+            font-size: 1.6rem;
             margin-bottom: 0;
             font-weight: bold;
             letter-spacing: 2px;
         }
-        
-        /* Logo容器 - 与index保持完全一致 */
+
         .logo-section {
             text-align: center;
             padding: 70px 20px 30px;
             margin-top: -30px;
         }
-        
+
         .logo-section svg {
             max-width: 600px;
             height: auto;
@@ -54,12 +56,11 @@
             cursor: pointer;
             transition: opacity 0.3s ease;
         }
-        
+
         .logo-section svg:hover {
             opacity: 0.8;
         }
-        
-        /* 返回首页按钮 */
+
         .back-home-btn {
             display: inline-block;
             background: linear-gradient(135deg, #DA1F28 0%, #800000 100%);
@@ -67,66 +68,61 @@
             padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             margin-top: 15px;
         }
-        
+
         .back-home-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        
-        /* 主要内容容器 */
+
         .container {
             max-width: 1200px;
             margin: 15px auto;
             padding: 0 20px;
         }
-        
-        /* 色板区域 */
+
         .palette-section {
             margin-bottom: 40px;
             padding-top: 15px;
         }
-        
+
         .palette-title {
-            font-size: 1.8em;
+            font-size: 1.8rem;
             color: #333;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 3px solid #DA1F28;
             display: inline-block;
         }
-        
-        /* 颜色网格 */
+
         .color-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
             margin-top: 15px;
         }
-        
-        /* 颜色卡片 */
+
         .color-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .color-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
-        
-        /* 颜色展示区 */
+
         .color-display {
             height: 180px;
             position: relative;
@@ -134,23 +130,22 @@
             align-items: flex-end;
             padding: 15px;
         }
-        
+
         .color-name {
             background: rgba(255, 255, 255, 0.95);
             color: #333333;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
-            font-size: 1em;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
-        /* 颜色信息 */
+
         .color-info {
             padding: 20px;
         }
-        
+
         .color-info-row {
             display: flex;
             justify-content: space-between;
@@ -159,75 +154,70 @@
             border-bottom: 1px solid #f0f0f0;
             transition: background 0.2s;
         }
-        
+
         .color-info-row:last-child {
             border-bottom: none;
         }
-        
+
         .color-info-row:hover {
             background: #f8f8f8;
         }
-        
+
         .color-label {
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.9rem;
         }
-        
+
         .color-value {
             font-weight: bold;
             color: #333;
-            font-size: 0.95em;
+            font-size: 0.95rem;
         }
-        
-        /* 字体下载链接 */
+
         .font-link {
             color: #1C1C1E;
             text-decoration: underline;
             cursor: pointer;
             transition: color 0.3s;
         }
-        
+
         .font-link:hover {
             color: #DA1F28;
             text-decoration: none;
         }
-        
+
         .manual-link {
             color: #1C1C1E;
             text-decoration: underline;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
-        
+
         .manual-link:hover {
             color: #DA1F28;
             text-decoration: none;
         }
-        
-        /* 字体容器对齐 */
+
         .font-container {
             display: flex;
             align-items: center;
             gap: 30px;
         }
-        
-        /* 字体规范内容框 */
+
         .font-content {
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin-top: 15px;
         }
-        
-        /* 下载图片区域 */
+
         .download-section {
             margin-top: 15px;
             text-align: center;
         }
-        
-        /* 图片容器 */
+
         .images-container {
             display: flex;
             justify-content: space-between;
@@ -237,37 +227,36 @@
             margin-bottom: 30px;
             width: 100%;
         }
-        
+
         .image-wrapper {
             flex: 1;
             min-width: 280px;
             max-width: 48%;
         }
-        
+
         .image-label {
-            font-size: 0.9em;
+            font-size: 0.9rem;
             color: #666;
             margin-top: 10px;
             font-weight: bold;
             text-align: center;
         }
-        
+
         .download-image {
             max-width: 100%;
             height: auto;
             cursor: pointer;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             display: block;
         }
-        
+
         .download-image:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
-        
-        /* 下载按钮 */
+
         .download-button {
             display: inline-block;
             background: linear-gradient(135deg, #DA1F28 0%, #800000 100%);
@@ -275,31 +264,30 @@
             padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             margin-bottom: 20px;
         }
-        
+
         .download-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        
-        /* 复制提示 - 修复闪烁问题 */
+
         .copy-toast {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(28,28,30,0.85);
+            background: rgba(28, 28, 30, 0.85);
             color: white;
             padding: 15px 30px;
             border-radius: 8px;
-            font-size: 1em;
+            font-size: 1rem;
             display: none;
             z-index: 1000;
             text-align: center;
@@ -307,15 +295,14 @@
             pointer-events: none;
             animation: fadeInOut 1.5s ease forwards;
         }
-        
+
         @keyframes fadeInOut {
             0% { opacity: 0; transform: translate(-50%, -40%); }
             15% { opacity: 1; transform: translate(-50%, -50%); }
             85% { opacity: 1; transform: translate(-50%, -50%); }
             100% { opacity: 0; transform: translate(-50%, -60%); }
         }
-        
-        /* 浮动返回按钮 */
+
         .back-to-top {
             position: fixed;
             top: 20px;
@@ -330,8 +317,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5em;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -339,19 +326,18 @@
             transition: all 0.3s ease;
             text-decoration: none;
         }
-        
+
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .back-to-top.visible:hover {
             background: rgba(218, 31, 40, 1);
             transform: translateY(-3px);
         }
-        
-        /* 页脚 */
+
         .footer {
             background: #333;
             color: white;
@@ -359,83 +345,214 @@
             padding: 30px;
             margin-top: 50px;
         }
-        
+
         .footer-link {
             color: white;
             text-decoration: underline;
             cursor: pointer;
             transition: color 0.3s;
         }
-        
+
         .footer-link:hover {
             color: #DA1F28;
         }
-        
-        /* ===== 响应式设计 ===== */
-        
-        /* 平板端 */
+
         @media (max-width: 768px) {
-            .header { padding: 10px 20px; }
-            .header h1 { font-size: 1.3em; }
-            .logo-section { padding: 30px 20px 25px; margin-top: 0; }
-            .logo-section svg { max-width: 400px; }
-            .font-container { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .images-container { flex-direction: column; align-items: stretch; }
-            .image-wrapper { max-width: 100%; }
-            .palette-section { padding-top: 25px; margin-bottom: 30px; }
-            .back-to-top { top: 15px; left: 15px; width: 40px; height: 40px; font-size: 1.2em; }
+            html {
+                font-size: 15px;
+            }
+            .header {
+                padding: 10px 20px;
+            }
+            .logo-section {
+                padding: 30px 20px 25px;
+                margin-top: 0;
+            }
+            .logo-section svg {
+                max-width: 400px;
+            }
+            .font-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .images-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .image-wrapper {
+                max-width: 100%;
+            }
+            .palette-section {
+                padding-top: 25px;
+                margin-bottom: 30px;
+            }
+            .back-to-top {
+                top: 15px;
+                left: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
         }
-        
-        /* 手机端 */
+
         @media (max-width: 600px) {
-            .header { padding: 8px 16px; }
-            .header h1 { font-size: 1.1em; letter-spacing: 1px; }
-            
-            .container { padding: 0 10px; margin: 10px auto; }
-            .logo-section { padding: 25px 20px 20px; margin-top: 15px; }
-            .logo-section svg { max-width: 300px; }
-            .back-home-btn { padding: 6px 18px; font-size: 0.8em; margin-top: 10px; }
-            .color-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 10px; }
-            .color-card { border-radius: 8px; }
-            .color-display { height: 100px; padding: 8px; }
-            .color-name { padding: 4px 10px; font-size: 0.85em; border-radius: 15px; }
-            .color-info { padding: 10px; }
-            .color-info-row { padding: 5px 0; }
-            .color-label { font-size: 0.75em; }
-            .color-value { font-size: 0.8em; }
-            .palette-title { font-size: 1.4em; margin-bottom: 10px; padding-bottom: 5px; }
-            .palette-section { margin-bottom: 25px; padding-top: 20px; }
-            .font-content { padding: 20px; margin-top: 10px; }
-            .download-section { margin-top: 10px; }
-            .download-button { padding: 12px 30px; font-size: 1em; }
+            html {
+                font-size: 14px;
+            }
+            .header {
+                padding: 8px 16px;
+            }
+            .header h1 {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+            .container {
+                padding: 0 10px;
+                margin: 10px auto;
+            }
+            .logo-section {
+                padding: 25px 20px 20px;
+                margin-top: 15px;
+            }
+            .logo-section svg {
+                max-width: 300px;
+            }
+            .back-home-btn {
+                padding: 6px 18px;
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+            .color-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-top: 10px;
+            }
+            .color-card {
+                border-radius: 8px;
+            }
+            .color-display {
+                height: 100px;
+                padding: 8px;
+            }
+            .color-name {
+                padding: 4px 10px;
+                font-size: 0.9rem;
+                border-radius: 15px;
+            }
+            .color-info {
+                padding: 10px;
+            }
+            .color-info-row {
+                padding: 5px 0;
+            }
+            .color-label {
+                font-size: 0.8rem;
+            }
+            .color-value {
+                font-size: 0.85rem;
+            }
+            .palette-title {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+            }
+            .palette-section {
+                margin-bottom: 25px;
+                padding-top: 20px;
+            }
+            .font-content {
+                padding: 20px;
+                margin-top: 10px;
+            }
+            .download-section {
+                margin-top: 10px;
+            }
+            .download-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            .back-to-top {
+                font-size: 1.2rem;
+            }
+            .manual-link {
+                font-size: 0.85rem;
+            }
+            .image-label {
+                font-size: 0.85rem;
+            }
+            .copy-toast {
+                font-size: 0.95rem;
+            }
         }
-        
-        /* 超小屏幕 */
+
         @media (max-width: 400px) {
-            .header { padding: 6px 12px; }
-            .header h1 { font-size: 0.95em; letter-spacing: 0.5px; }
-            
-            .color-grid { gap: 8px; margin-top: 8px; }
-            .color-display { height: 80px; padding: 5px; }
-            .color-name { padding: 3px 8px; font-size: 0.75em; }
-            .color-info { padding: 8px; }
-            .color-info-row { padding: 3px 0; }
-            .color-label { font-size: 0.7em; }
-            .color-value { font-size: 0.75em; }
-            .back-home-btn { padding: 5px 14px; font-size: 0.7em; }
+            html {
+                font-size: 13px;
+            }
+            .header {
+                padding: 6px 12px;
+            }
+            .header h1 {
+                font-size: 1.1rem;
+                letter-spacing: 0.5px;
+            }
+            .color-grid {
+                gap: 8px;
+                margin-top: 8px;
+            }
+            .color-display {
+                height: 80px;
+                padding: 5px;
+            }
+            .color-name {
+                padding: 3px 8px;
+                font-size: 0.8rem;
+            }
+            .color-info {
+                padding: 8px;
+            }
+            .color-info-row {
+                padding: 3px 0;
+            }
+            .color-label {
+                font-size: 0.7rem;
+            }
+            .color-value {
+                font-size: 0.75rem;
+            }
+            .palette-title {
+                font-size: 1.4rem;
+            }
+            .back-home-btn {
+                padding: 5px 14px;
+                font-size: 0.8rem;
+            }
+            .download-button {
+                font-size: 0.9rem;
+            }
+            .back-to-top {
+                font-size: 1rem;
+            }
+            .manual-link {
+                font-size: 0.75rem;
+            }
+            .image-label {
+                font-size: 0.75rem;
+            }
+            .copy-toast {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 浮动返回按钮 -->
     <a href="https://jingwenwang-jingle.github.io/" class="back-to-top" id="backToTop" title="返回首页">←</a>
-    
-    <!-- 头部 - 窄条样式，只显示标准色指南 -->
+
     <a href="https://jingwenwang-jingle.github.io/" class="header">
         <h1>标准色指南</h1>
     </a>
-    
-    <!-- Logo区域 - 内嵌SVG，与index保持完全一致 -->
+
     <div class="logo-section">
         <a href="https://jingwenwang-jingle.github.io/">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3368.93 659.9">
@@ -520,22 +637,18 @@
         <br>
         <a href="https://jingwenwang-jingle.github.io/" class="back-home-btn">返回首页</a>
     </div>
-    
-    <!-- 主要内容 -->
+
     <div class="container">
-        <!-- 主调色板 -->
         <div class="palette-section">
             <h2 class="palette-title">主调色板</h2>
             <div class="color-grid" id="primaryColors"></div>
         </div>
-        
-        <!-- 次调色板 -->
+
         <div class="palette-section">
             <h2 class="palette-title">次调色板</h2>
             <div class="color-grid" id="secondaryColors"></div>
         </div>
-        
-        <!-- 字体规范 -->
+
         <div class="palette-section">
             <h2 class="palette-title">字体规范</h2>
             <div class="font-content">
@@ -555,8 +668,7 @@
                 </div>
             </div>
         </div>
-        
-        <!-- LOGO&色彩总览 -->
+
         <div class="palette-section">
             <h2 class="palette-title">LOGO&amp;色彩总览</h2>
             <div class="download-section">
@@ -576,17 +688,14 @@
             </div>
         </div>
     </div>
-    
-    <!-- 复制提示 -->
+
     <div class="copy-toast" id="copyToast"></div>
-    
-    <!-- 页脚 -->
+
     <div class="footer">
         <p><a href="https://jingwenwang-jingle.github.io/" class="footer-link">杭高电视台</a> | 标准色指南</p>
     </div>
-    
+
     <script>
-        // 浮动返回按钮
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
@@ -595,27 +704,24 @@
                 backToTopBtn.classList.remove('visible');
             }
         });
-        
-        // 主调色板
+
         const primaryColors = [
             { name: '杭高红', hex: '#DA1F28', rgb: '218, 31, 40', cmyk: '0, 90, 80, 10' },
             { name: '黑色', hex: '#1C1C1E', rgb: '28, 28, 30', cmyk: '0, 0, 0, 88' },
             { name: '浅灰色', hex: '#CCCCCC', rgb: '204, 204, 204', cmyk: '0, 0, 0, 20' },
             { name: '亮白色', hex: '#F2F2F2', rgb: '242, 242, 242', cmyk: '0, 0, 0, 5' }
         ];
-        
-        // 次调色板
+
         const secondaryColors = [
             { name: '亮红', hex: '#E81F29', rgb: '232, 31, 41', cmyk: '0, 95, 85, 0' },
             { name: '血红', hex: '#800000', rgb: '128, 0, 0', cmyk: '30, 100, 100, 30' },
             { name: '酒红', hex: '#400000', rgb: '64, 0, 0', cmyk: '30, 100, 100, 60' },
             { name: '圣洁', hex: '#EEECD9', rgb: '238, 236, 217', cmyk: '5, 5, 15, 0' }
         ];
-        
-        // Toast 相关
+
         let toastTimer = null;
         const toastEl = document.getElementById('copyToast');
-        
+
         function createColorCard(color) {
             const card = document.createElement('div');
             card.className = 'color-card';
@@ -631,7 +737,7 @@
             `;
             return card;
         }
-        
+
         function copyColor(value, name) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(value).then(() => showToast(`${name}已复制：${value}`)).catch(() => fallbackCopy(value, name));
@@ -639,7 +745,7 @@
                 fallbackCopy(value, name);
             }
         }
-        
+
         function fallbackCopy(value, name) {
             const textarea = document.createElement('textarea');
             textarea.value = value;
@@ -650,46 +756,42 @@
             try { document.execCommand('copy'); showToast(`${name}已复制：${value}`); } catch (err) { showToast('复制失败'); }
             document.body.removeChild(textarea);
         }
-        
+
         function showToast(message) {
-            // 清除之前的定时器
             if (toastTimer) {
                 clearTimeout(toastTimer);
                 toastTimer = null;
             }
-            // 重置动画：移除并重新添加元素以重启动画
             toastEl.style.display = 'none';
             toastEl.style.animation = 'none';
-            // 强制回流
             void toastEl.offsetHeight;
-            
+
             toastEl.innerHTML = message;
             toastEl.style.display = 'block';
             toastEl.style.animation = 'fadeInOut 1.5s ease forwards';
-            
+
             toastTimer = setTimeout(() => {
                 toastEl.style.display = 'none';
                 toastEl.style.animation = 'none';
                 toastTimer = null;
             }, 1600);
         }
-        
+
         function downloadFont(type) {
             let url = type === 'english' ? '英文下载链接' : '中文下载链接';
             window.open(url, '_blank');
             showToast('开始下载...<br>如下载失败请点击手动下载');
         }
-        
-        // 修复图片下载：直接打开图片的 src URL
+
         function downloadImage(imgElement) {
             const url = imgElement.src;
             window.open(url, '_blank');
         }
-        
+
         function downloadSummary() {
             window.open('汇总文件链接', '_blank');
         }
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             const pc = document.getElementById('primaryColors');
             const sc = document.getElementById('secondaryColors');
