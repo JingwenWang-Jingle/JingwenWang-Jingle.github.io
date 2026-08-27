@@ -20,37 +20,26 @@
             flex-direction: column;
         }
 
-        /* 头部 - 与 color-guide 完全一致：可点击、渐变、内边距 */
+        /* 头部 - 窄条横幅样式，无交互效果 */
         .header {
             background: linear-gradient(135deg, #DA1F28 0%, #800000 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 14px 20px;
             text-align: center;
-            cursor: pointer;
-            text-decoration: none;
             display: block;
-            transition: opacity 0.3s ease;
-        }
-
-        .header:hover {
-            opacity: 0.9;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 1.6em;
             font-weight: bold;
-        }
-
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
+            letter-spacing: 2px;
+            white-space: nowrap;
         }
 
         /* Logo容器 - 仅视觉展示，无点击交互 */
         .logo-section {
             text-align: center;
-            padding: 70px 20px 30px;  /* 增加底部内边距，让logo与卡片距离更大 */
+            padding: 70px 20px 30px;
             margin-top: -30px;
         }
 
@@ -58,11 +47,10 @@
             max-width: 600px;
             height: auto;
             display: inline-block;
-            /* 移除所有 hover 效果，鼠标悬停无变化 */
-            pointer-events: none;  /* 彻底禁用鼠标交互 */
+            pointer-events: none;
         }
 
-        /* 主要内容容器 - 与 color-guide 一致 */
+        /* 主要内容容器 */
         .main-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -129,7 +117,7 @@
             display: inline-block;
         }
 
-        /* 页脚 - 与 color-guide 风格一致 */
+        /* 页脚 */
         .footer {
             background: #333;
             color: white;
@@ -149,117 +137,69 @@
             color: #DA1F28;
         }
 
-        /* 响应式设计 - 平板端 (与 color-guide 对齐) */
+        /* 响应式设计 - 平板端 */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
-            }
-            .header p {
-                font-size: 1em;
-            }
-            .logo-section {
-                padding: 30px 20px 25px;
-                margin-top: 0;
-            }
-            .logo-section svg {
-                max-width: 400px;
-            }
-            .card {
-                padding: 25px 20px;
-            }
-            .card-title {
-                font-size: 1.3em;
-            }
-            .color-preview span {
-                width: 32px;
-                height: 32px;
-            }
+            .header { padding: 10px 20px; }
+            .header h1 { font-size: 1.3em; }
+            .logo-section { padding: 30px 20px 25px; margin-top: 0; }
+            .logo-section svg { max-width: 400px; }
+            .card { padding: 25px 20px; }
+            .card-title { font-size: 1.3em; }
+            .color-preview span { width: 32px; height: 32px; }
         }
 
-        /* 响应式设计 - 手机端 (与 color-guide 对齐) */
+        /* 响应式设计 - 手机端 - 缩小卡片间距 */
         @media (max-width: 600px) {
-            .main-content {
-                padding: 0 10px 10px;
-                margin: 0 auto;
-            }
-            .logo-section {
-                padding: 25px 20px 20px;
-                margin-top: 15px;
-            }
-            .logo-section svg {
-                max-width: 300px;
-            }
-            .color-preview span {
-                width: 28px;
-                height: 28px;
-                border-radius: 4px;
-            }
-            .color-preview {
-                gap: 6px;
-            }
-            .card {
-                padding: 20px 15px;
-            }
-            .card-title {
-                font-size: 1.2em;
-            }
-            .card-description {
-                font-size: 0.9em;
-            }
+            .header { padding: 8px 16px; }
+            .header h1 { font-size: 1.1em; letter-spacing: 1px; }
+            
+            .main-content { padding: 0 10px 10px; margin: 0 auto; }
+            .logo-section { padding: 25px 20px 20px; margin-top: 15px; }
+            .logo-section svg { max-width: 300px; }
+            
+            /* 缩小卡片间距 */
+            .card-grid { gap: 16px; }
+            .card { padding: 16px 14px; border-radius: 10px; }
+            .card-title { font-size: 1.1em; padding-bottom: 5px; margin-bottom: 6px; }
+            .card-description { font-size: 0.85em; margin-top: 2px; }
+            
+            .color-preview span { width: 28px; height: 28px; border-radius: 4px; }
+            .color-preview { gap: 6px; margin-top: 10px; }
         }
 
-        /* 超小屏幕 (与 color-guide 对齐) */
+        /* 超小屏幕 */
         @media (max-width: 400px) {
-            .color-preview span {
-                width: 24px;
-                height: 24px;
-            }
-            .card {
-                padding: 16px 12px;
-            }
-            .card-title {
-                font-size: 1.1em;
-            }
+            .header { padding: 6px 12px; }
+            .header h1 { font-size: 0.9em; letter-spacing: 0.5px; }
+            
+            .card-grid { gap: 12px; }
+            .card { padding: 14px 12px; border-radius: 8px; }
+            .card-title { font-size: 1em; padding-bottom: 4px; margin-bottom: 4px; }
+            .card-description { font-size: 0.8em; }
+            
+            .color-preview span { width: 24px; height: 24px; }
+            .color-preview { gap: 5px; margin-top: 8px; }
         }
     </style>
 </head>
 <body>
-    <!-- 头部 - 与 color-guide 完全一致：可点击、渐变、无浮动按钮、无返回首页 -->
-    <a href="https://jingwenwang-jingle.github.io/" class="header">
-        <h1>杭高电视台</h1>
-        <p>设计标准参考</p>
-    </a>
+    <!-- 头部 - 窄条横幅样式，无点击跳转和悬停效果 -->
+    <div class="header">
+        <h1>杭高电视台 - 设计标准参考</h1>
+    </div>
 
-    <!-- Logo区域 - 纯视觉展示，无任何鼠标交互效果 -->
+    <!-- Logo区域 - 纯视觉展示 -->
     <div class="logo-section">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3368.93 659.9">
             <defs>
                 <style>
-                    .cls-1 {
-                        stroke-width: 4px;
-                    }
-                    .cls-1,
-                    .cls-2,
-                    .cls-3 {
-                        fill: #da1f28;
-                    }
-                    .cls-1,
-                    .cls-3 {
-                        stroke: #da1f28;
-                        stroke-miterlimit: 10;
-                    }
-                    .cls-4 {
-                        fill: #1b1c1f;
-                    }
-                    .cls-5 {
-                        fill: #f2f2f2;
-                    }
-                    .cls-3 {
-                        stroke-width: 5px;
-                    }
-                    .cls-6 {
-                        fill: #ccc;
-                    }
+                    .cls-1 { stroke-width: 4px; }
+                    .cls-1, .cls-2, .cls-3 { fill: #da1f28; }
+                    .cls-1, .cls-3 { stroke: #da1f28; stroke-miterlimit: 10; }
+                    .cls-4 { fill: #1b1c1f; }
+                    .cls-5 { fill: #f2f2f2; }
+                    .cls-3 { stroke-width: 5px; }
+                    .cls-6 { fill: #ccc; }
                 </style>
             </defs>
             <g id="ihanggao">
@@ -349,7 +289,13 @@
                 </div>
             </a>
 
-            <!-- 预留卡片 -->
+            <!-- IP形象 - 镜小汐 卡片 -->
+            <a href="https://jingwenwang-jingle.github.io/jingxiaoxi.html" class="card">
+                <div class="card-title">IP形象 - 镜小汐</div>
+                <div class="card-description">杭高电视台IP形象镜小汐相关色板、立绘和周边设计资源</div>
+            </a>
+
+            <!-- 更多资源 卡片 -->
             <a href="#" class="card" onclick="alert('更多资源即将上线，敬请期待！'); return false;">
                 <div class="card-title">更多资源</div>
                 <div class="card-description">更多品牌资源正在筹备中</div>
